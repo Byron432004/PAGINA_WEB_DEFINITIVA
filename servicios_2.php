@@ -1,0 +1,245 @@
+<?php
+
+    session_start();
+
+    if(!isset($_SESSION['usuario'])){
+        echo'
+            <script>
+                alert("Requiere iniciar sesión");
+                window.location = "login.php";
+            </script>
+        ';
+        session_destroy();
+        die();
+        
+    }
+
+    include 'php/obtenerdatos.php';
+    
+?>
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+ <!--==========================
+
+  PESTAÑA DE INFORMACIÓN
+
+  ============================-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Servicios - Asesoramiento Juridico</title>
+  <link rel="icon" type="image/png" href="img/logo_pestañas.png">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+  <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+  <link href="favicon.ico" rel="shortcut icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate-css/animate.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style2.css" rel="stylesheet">
+
+  <style>
+    .login-button.cerra {
+        background-color: #ff4d4d; /* Rojo para 'Cerrar Sesión' */
+        color: white; /* Texto blanco */
+    }
+    .login-button.cuenta {
+        background-color: #4CAF50; /* Verde para 'Mi cuenta' */
+        color: white; /* Texto blanco */
+    }
+</style>
+
+</head>
+
+<body>
+  <div id="preloader"></div>
+
+
+  <!--==========================
+  Sección de encabezado
+  ============================-->
+  <header id="header">
+    <div class="container">
+      <div id="logo" class="pull-left">
+        <a href="index.html"><img src="img/logo_bienvenida_transparente_2.png" alt="" title="" /></img></a>
+        <!-- Descomenta abajo si prefieres usar una imagen de texto -->
+        <!--<h1><a href="#hero">Encabezado 1</a></h1>-->
+      </div>
+
+
+            <nav id="nav-menu-container">
+              <ul class="nav-menu">
+                <li><a href="index_2.php">Inicio</a></li>
+                <li><a href="profesionales_2.php">Nosotros</a></li>
+                <li><a href="servicios_2.php">Servicios</a></li>
+                <li><a href="ubicacion_2.php">Horario de Atención y Ubicación</a></li>
+                <li><a href="sugerencias_2.php">Sugerencias</a></li>
+                <li><a href="contacto_2.php">Contactenos</a></li>
+                <li><a href="mi_cuenta.php" class="login-button cuenta">Mi cuenta</a></li>
+                <li><a href="php/cerrar_sesion.php" class="login-button cerra">Cerrar Sesion</a></li>
+
+              </ul>
+            </nav>
+      <!-- #nav-menu-container -->
+    </div>
+  </header>
+  <!-- #header -->
+
+  <!--==========================
+  primera Section
+  ============================-->
+  
+    <div class="container wow fadeInUp">
+        <div class="col-md-12">
+          <br>
+          <h3 class="section-title">La ayuda que te podemos ofrecer</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description" style="font-size: 18px;" >Nuestra firma legal se dedica a ofrecer soluciones en tramites notariales, judiciales, arquitectonicos y servicios</p>
+      </div>
+    </div>
+    <div class="container about-container2 wow fadeInUp">
+      <div class="row1">
+        <div class="col-md-6">
+          <img src="img/servicios_1.jpg" alt="Descripción de la imagen" class="img-responsive">
+        </div>
+        <div class="col-md-6 about-content">
+          <h2 class="about-title" style="color: black;">Trámites Notariales</h2>
+          <div class="section-h2-divider"></div>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">Compraventas</a>
+            <a href="#" class="list-group-item list-group-item-action">Promesas de Compraventa</a>
+            <a href="#" class="list-group-item list-group-item-action">Posesiones Efectivas</a>
+            <a href="#" class="list-group-item list-group-item-action">Donaciones</a>
+            <a href="#" class="list-group-item list-group-item-action">Permutas</a>
+            <a href="#" class="list-group-item list-group-item-action">Declaraciones Juramentadas</a>
+            <a href="#" class="list-group-item list-group-item-action">Poderes Especiales y Generales</a>
+            <a href="#" class="list-group-item list-group-item-action">Protocolizaciones</a>
+            <a href="#" class="list-group-item list-group-item-action">Divorcios por mutuo acuerdo</a>
+            <a href="#" class="list-group-item list-group-item-action">Ratificaciones</a>
+            <a href="#" class="list-group-item list-group-item-action">Contratos de Arrendamiento</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="container about-container3 wow fadeInUp">
+      <div class="row2">
+        <div class="col-md-6">
+          <img src="img/servicios_2.jpg" alt="Descripción de la imagen" class="img-responsive">
+        </div>
+        <div class="col-md-6 about-content">
+          <h2 class="about-title"  style="color: black;">Trámites Judiciales</h2>
+          <div class="section-h2-divider"></div>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Civil</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Familia, niñez y adolescencia</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Inquilinato</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Constitución de Compañías</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Penal</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Laboral</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container about-container4 wow fadeInUp">
+      <div class="row3">
+        <div class="col-md-6">
+          <img src="img/servicios_3.jpg" alt="Descripción de la imagen" class="img-responsive">
+        </div>
+        <div class="col-md-6 about-content">
+          <h2 class="about-title"  style="color: black;">Arquitectura</h2>
+          <div class="section-h2-divider"></div>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Planos Arquitectónicos</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Planos Estructurales</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Levantamientos Arquitectónicos</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Levantamientos Planimétricos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container about-container5 wow fadeInUp">
+      <div class="row4">
+        <div class="col-md-6">
+          <img src="img/servicios_4.jpg" alt="Descripción de la imagen" class="img-responsive">
+        </div>
+        <div class="col-md-6 about-content">
+          <h2 class="about-title"  style="color: black;">Servicios Varios</h2>
+          <div class="section-h2-divider"></div>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Oficios para peticiones varias</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Registro único de Mipymes-Rum</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Formulario 108 Herencias, Donaciones y Legados</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Certificados Comerciales</a>
+            <a href="#" class="list-group-item list-group-item-action" style="font-size: 18px;">Certificados Laborales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  <!--==========================
+  Footer
+============================-->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            &copy; Copyright <strong>Estudio Jurídico - Asesoria Legal Integral</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Required JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/morphext/morphext.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/stickyjs/sticky.js"></script>
+  <script src="lib/easing/easing.js"></script>
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="js/custom.js"></script>
+
+  <script src="contactform/contactform.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1142053847830194"
+       crossorigin="anonymous"></script>
+
+</body>
+
+</html>

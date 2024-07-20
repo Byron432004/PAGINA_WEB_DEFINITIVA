@@ -1,0 +1,78 @@
+/* Estilos para el botón de abrir modal */
+#abrirModal2 {
+  margin-bottom: 10px;
+  position: relative;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #000000;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#abrirModal2:hover {
+  background-color: #fff;
+  color: #000000;
+}
+
+/* Fondo modal: negro con opacidad al 50% */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Ventana o caja modal */
+.contenido-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  width: 300px;  /* AQUI SE MODIFICA EL ANCHO DE LA POP UP */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation-name: fadeInFromCenter;
+  animation-duration: 0.5s;
+  text-align: center; /* Agregamos este estilo para centrar el texto */
+}
+
+/* Animación */
+@keyframes fadeInFromCenter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Estilos para el botón de cerrar modal */
+.cerrar-modal {
+  margin-bottom: 10px;
+  position: relative;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  color: #000000;
+  background-color: #FFFFFF;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cerrar-modal:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
